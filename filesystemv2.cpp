@@ -1210,9 +1210,9 @@ int main()
 			file_name.clear();
 			std::cin >> file_name;
 			std::cout << "Enter data";
-			std::getline(std::cin, data);
+			
 			data.clear();
-			//std::cin >> data;
+			std::cin >> data;
 			
 			a.add_in_data_to_file_v2(file_name, data);
 			break;
@@ -1239,7 +1239,8 @@ int main()
 			std::cin >> file_name;
 			std::cout << "Enter data to overwrite";
 			data.clear();
-			std::getline(std::cin, data);
+			//std::getline(std::cin, data);
+			std::cin >> data;
 			a.overwrite_data_to_file_v2(file_name, data);
 			break;
 		case 6:
