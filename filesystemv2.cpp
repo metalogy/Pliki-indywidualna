@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "filesystemv2.h"
 #include <math.h>
 #include <iostream>
@@ -1177,7 +1178,7 @@ void file_system::close_file_reading(std::string file_name_)
 int main()
 {
 	file_system a;
-	bool running=true;
+	bool running = true;
 	int number;
 	std::string file_name;
 	std::string data;
@@ -1199,22 +1200,24 @@ int main()
 			break;
 
 		case 1:
-			std::cout << "Enter creating file filename"<<std::endl;
+			std::cout << "Enter creating file filename" << std::endl;
 			file_name.clear();
 			std::cin >> file_name;
 			a.create_file_v2(file_name);
 			break;
 		case 2:
-			std::cout << "Enter filename"<<std::endl;
+			std::cout << "Enter filename" << std::endl;
 			file_name.clear();
 			std::cin >> file_name;
 			std::cout << "Enter data";
+			std::getline(std::cin, data);
 			data.clear();
-			std::cin >> data;
+			//std::cin >> data;
+			
 			a.add_in_data_to_file_v2(file_name, data);
 			break;
 		case 3:
-			std::cout << "Enter filename to delete"<<std::endl;
+			std::cout << "Enter filename to delete" << std::endl;
 			file_name.clear();
 			std::cin >> file_name;
 			a.delete_file_v2(file_name);
@@ -1224,6 +1227,7 @@ int main()
 			std::cout << "Enter old filename" << std::endl;
 			file_name.clear();
 			std::cin >> file_name;
+		
 			std::cout << "Enter new filename" << std::endl;
 			new_file_name.clear();
 			std::cin >> new_file_name;
@@ -1235,7 +1239,7 @@ int main()
 			std::cin >> file_name;
 			std::cout << "Enter data to overwrite";
 			data.clear();
-			std::cin >> data;
+			std::getline(std::cin, data);
 			a.overwrite_data_to_file_v2(file_name, data);
 			break;
 		case 6:
